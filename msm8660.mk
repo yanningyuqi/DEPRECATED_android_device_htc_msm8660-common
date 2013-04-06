@@ -115,7 +115,8 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true \
-    debug.composition.type=mdp \
+    debug.composition.type=dyn \
+    debug.enabletr=true \
     debug.mdpcomp.maxlayer=0 \
     debug.egl.hw=1 \
     debug.mdpcomp.logs=0 \
