@@ -112,6 +112,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true \
+    ro.sf.compbypass.enable=0 \
     debug.composition.type=gpu \
     debug.enabletr=true \
     debug.egl.hw=1 \
