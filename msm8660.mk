@@ -77,10 +77,15 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libOmxQcelp13Enc \
     libOmxEvrcEnc \
-    libOmxAmrEnc
+    libv8 \
+    libOmxAmrEnc 
+    
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8660
 
 PRODUCT_PACKAGES += \
-    camera.default \
+    camera.msm8660 \
     libnetcmdiface \
     libsurfaceflinger_client
 
