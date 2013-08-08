@@ -20,19 +20,32 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/htc/msm8660
+TARGET_KERNEL_SOURCE := /home/sultan/sultan-kernel-bruce-linaro3
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 # Architecture
+TARGET_CPU_VARIANT := cortex-a9
+TARGET_LEGACY_LPA := true
+LOCAL_CFLAGS += LEGACY_LPA
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
+TARGET_HARDWARE_3D := true
+BOARD_USES_GENLOCK := true
+TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
+ARCH_ARM_HAVE_VFP := true
+ARCH_ARM_HAVE_NEON := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
+# Compiler Optimization
+ARCH_ARM_HIGH_OPTIMIZATION := true
+ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true  
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
@@ -87,6 +100,10 @@ BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 # legacy LIBLIGHT naming
 TARGET_PROVIDES_LIBLIGHT := true
 TARGET_PROVIDES_LIBLIGHTS := true
+
+# Recovery
+TARGET_RECOVERY_FSTAB := device/htc/pyramid/ramdisk/fstab.pyramid
+RECOVERY_FSTAB_VERSION := 2
 
 # Webkit
 ENABLE_WEBGL := true
