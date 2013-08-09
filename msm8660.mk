@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
 
+# libnetcmdiface
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
 # Graphics
 PRODUCT_PACKAGES += \
     copybit.msm8660 \
@@ -123,4 +127,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     dev.pm.dyn_samplingrate=1 \
     ro.opengles.version=131072
-
