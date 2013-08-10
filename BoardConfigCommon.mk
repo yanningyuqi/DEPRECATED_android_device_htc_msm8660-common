@@ -46,6 +46,11 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 ARCH_ARM_HIGH_OPTIMIZATION := true
 ARCH_ARM_HIGH_OPTIMIZATION_COMPAT := true  
 
+# ROM Toolchain
+# FIXME: ROM does not boot when compiled with the GCC 4.6 and 4.7 toolchains included in CM10.2,
+# so for now we must use the GCC 4.6 toolchain from CM10.1 to build the ROM.
+TARGET_GCC_VERSION_EXP := 4.6
+
 # Flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
