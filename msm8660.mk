@@ -79,9 +79,10 @@ PRODUCT_PACKAGES += \
     libOmxEvrcEnc \
     libOmxAmrEnc
 
-# Camera wrapper
 PRODUCT_PACKAGES += \
-    camera.default
+    camera.default \
+    libnetcmdiface \
+    libsurfaceflinger_client
 
 # HDMI
 PRODUCT_PACKAGES += \
