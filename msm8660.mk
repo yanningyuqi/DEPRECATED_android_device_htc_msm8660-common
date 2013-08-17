@@ -84,6 +84,10 @@ PRODUCT_PACKAGES += \
     libnetcmdiface \
     libsurfaceflinger_client
 
+# GooManager
+PRODUCT_PACKAGES += \
+    GooManager
+
 # HDMI
 PRODUCT_PACKAGES += \
     hdmid
