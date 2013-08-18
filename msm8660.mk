@@ -78,11 +78,7 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxEvrcEnc \
     libv8 \
-    libOmxAmrEnc 
-    
-# Power
-PRODUCT_PACKAGES += \
-    power.msm8660
+    libOmxAmrEnc
 
 PRODUCT_PACKAGES += \
     camera.msm8660 \
