@@ -105,10 +105,6 @@ static char * camera_fixup_getparams(int id, const char * settings)
         params.set(android::CameraParameters::KEY_PREVIEW_FRAME_RATE, "30");
     }
 
-    // Enable Qualcomm ZSL mode to workaround dark preview
-    // Note: We cannot use Camera app 'enableZSL' as our preview stops
-    params.set("camera-mode", "1");
-
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
 
@@ -120,6 +116,18 @@ char * camera_fixup_setparams(int id, const char * settings)
 {
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
+
+    if (params.get("recording-hint")) {
+        const char* isRecording = params.get("recording-hint");
+
+	// Enable ZSL mode when recording
+	if (strcmp(isRecording, "true") == 0)
+	    params.set("camera-mode", "1");
+
+    } else {
+	// Disable ZSL when using camera
+	    params.set("camera-mode", "0");
+    }
 
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
