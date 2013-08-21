@@ -48,10 +48,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/common/gps/gps.conf_US_SUPL:system/etc/gps.conf
 
-# libnetcmdiface
-PRODUCT_PACKAGES += \
-    libnetcmdiface
-
 # Graphics
 PRODUCT_PACKAGES += \
     copybit.msm8660 \
@@ -88,10 +84,6 @@ PRODUCT_PACKAGES += \
 # GooManager
 PRODUCT_PACKAGES += \
     GooManager
-
-# HDMI
-PRODUCT_PACKAGES += \
-    hdmid
 
 # Torch
 PRODUCT_PACKAGES += \
