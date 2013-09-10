@@ -42,7 +42,9 @@ PRODUCT_PACKAGES += \
     audio_policy.msm8660 \
     audio.primary.msm8660 \
     audio_policy.conf \
-    libaudioutils
+    libaudioutils \
+    libaudio-resampler \
+    audio.usb.default
 
 # GPS
 PRODUCT_COPY_FILES += \
