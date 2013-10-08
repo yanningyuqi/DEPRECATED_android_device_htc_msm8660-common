@@ -107,7 +107,6 @@ static char * camera_fixup_getparams(int id, const char * settings)
 	params.set(android::CameraParameters::KEY_AUTO_EXPOSURE, "frame-average");
 	params.set(android::CameraParameters::KEY_SCENE_DETECT, "on");
 	params.set(android::CameraParameters::KEY_SKIN_TONE_ENHANCEMENT, "enable");
-        params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "4.12");
         params.set(android::CameraParameters::KEY_SCENE_DETECT, "on");
         params.set(android::CameraParameters::KEY_TOUCH_AF_AEC, "touch-on");
 	params.set(android::CameraParameters::KEY_AUTO_EXPOSURE_LOCK, "false");
