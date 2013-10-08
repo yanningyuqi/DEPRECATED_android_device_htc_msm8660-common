@@ -110,6 +110,7 @@ static char * camera_fixup_getparams(int id, const char * settings)
         params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "4.31");
         params.set(android::CameraParameters::KEY_SCENE_DETECT, "on");
         params.set(android::CameraParameters::KEY_TOUCH_AF_AEC, "touch-on");
+	params.set(android::CameraParameters::KEY_AUTO_EXPOSURE_LOCK, "false");
     }
 
     android::String8 strParams = params.flatten();
@@ -124,17 +125,9 @@ char * camera_fixup_setparams(int id, const char * settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
-    if (params.get("recording-hint")) {
-        const char* isRecording = params.get("recording-hint");
+    //Workaround for crash when touch to focus is used with flash on.
+    params.set(android::CameraParameters::KEY_AUTO_EXPOSURE_LOCK, "false");
 
-	// Enable ZSL mode when recording
-	if (strcmp(isRecording, "true") == 0)
-	    params.set("camera-mode", "1");
-
-    } else {
-	// Disable ZSL when using camera
-	    params.set("camera-mode", "0");
-    }
 
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
@@ -225,6 +218,9 @@ void camera_stop_preview(struct camera_device * device)
 
     if(!device)
         return;
+
+    // Workaround for camera freezes
+    VENDOR_CALL(device, send_command, 7, 0, 0);
 
     VENDOR_CALL(device, stop_preview);
 }
@@ -328,13 +324,7 @@ int camera_take_picture(struct camera_device * device)
     if(!device)
         return -EINVAL;
 
-    // We safely avoid returning the exact result of VENDOR_CALL here. If ZSL
-    // really bumps fast, take_picture will be called while a picture is already being
-    // taken, leading to "picture already running" error, crashing Gallery app. Afaik,
-    // there is no issue doing 0 (error appears in logcat anyway if needed).
-    VENDOR_CALL(device, take_picture);
-
-    return 0;
+    return VENDOR_CALL(device, take_picture);
 }
 
 int camera_cancel_picture(struct camera_device * device)
@@ -360,7 +350,7 @@ int camera_set_parameters(struct camera_device * device, const char *params)
     tmp = camera_fixup_setparams(CAMERA_ID(device), params);
 
 #ifdef LOG_PARAMETERS
-    __android_log_write(ANDROID_LOG_VERBOSE, LOG_TAG, tmp+350);
+    __android_log_write(ANDROID_LOG_VERBOSE, LOG_TAG, tmp);
 #endif
 
     int ret = VENDOR_CALL(device, set_parameters, tmp);
@@ -410,17 +400,7 @@ int camera_send_command(struct camera_device * device,
     if(!device)
         return -EINVAL;
 
-    /* send_command may cause the camera hal do to unexpected things like lockups.
-     * we assume it wont. if it does so, prevent this by returning 0 */
-
-    if(cmd == 6) {
-        /* this command causes seg fault and camera crashes as this send_command calls
-         * for proprietary face detection models not supported in our framework */
-        ALOGV("send_command related to face detection suppressed");
-        return 0;
-    } else {
-        return VENDOR_CALL(device, send_command, cmd, arg1, arg2);
-    }
+    return VENDOR_CALL(device, send_command, cmd, arg1, arg2);
 }
 
 void camera_release(struct camera_device * device)
