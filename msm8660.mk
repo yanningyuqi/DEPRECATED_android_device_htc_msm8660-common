@@ -79,10 +79,6 @@ PRODUCT_PACKAGES += \
     libv8 \
     libOmxAmrEnc
 
-# Power
-PRODUCT_PACKAGES += \
-    power.msm8660
-
 PRODUCT_PACKAGES += \
     camera.msm8660 \
     libnetcmdiface \
