@@ -99,6 +99,9 @@ BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 TARGET_PROVIDES_LIBLIGHT := true
 TARGET_PROVIDES_LIBLIGHTS := true
 
+# Power
+TARGET_USES_CM_POWERHAL := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/htc/pyramid/ramdisk/fstab.pyramid
 RECOVERY_FSTAB_VERSION := 2

@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GooManager
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8660
+
 # Torch
 PRODUCT_PACKAGES += \
     Torch
