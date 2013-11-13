@@ -37,6 +37,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
+# WiFi
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -134,4 +138,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     ro.bq.gpu_to_cpu_unsupported=1 \
     debug.hwc.dynThreshold=1.9 \
-    lpa.decode=false
+    lpa.decode=false \
+    persist.fuse_sdcard=true
