@@ -107,6 +107,7 @@ TARGET_USES_CM_POWERHAL := true
 # Recovery
 TARGET_RECOVERY_FSTAB := device/htc/pyramid/ramdisk/fstab.pyramid
 RECOVERY_FSTAB_VERSION := 2
+USE_SET_METADATA := false
 
 # Webkit
 ENABLE_WEBGL := true
