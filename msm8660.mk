@@ -48,7 +48,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8660 \
     libaudioutils \
     libaudio-resampler \
-    audio.usb.default
+    audio.usb.default \
+    Camera2
 
 # audio policy
 PRODUCT_COPY_FILES += \
