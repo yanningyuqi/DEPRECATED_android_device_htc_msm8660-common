@@ -27,7 +27,7 @@ TARGET_BOARD_PLATFORM := msm8660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 # Architecture
-TARGET_CPU_VARIANT := scorpion
+TARGET_CPU_VARIANT := krait
 ARCH_ARM_HAVE_ARMV7A := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
