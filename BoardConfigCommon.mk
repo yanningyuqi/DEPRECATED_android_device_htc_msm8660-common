@@ -20,7 +20,8 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := /home/sultan/sultan-kernel-pyramid
+TARGET_LINARO_TOOLCHAIN_DATE := 2014.01
+TARGET_KERNEL_SOURCE := kernel/htc/pyramid
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8660
