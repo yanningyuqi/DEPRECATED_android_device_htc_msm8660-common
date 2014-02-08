@@ -302,18 +302,6 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="5000000"
-                   width="720"
-                   height="480"
-                   frameRate="31" />
-            <Audio codec="aac"
-                   bitRate="96000"
-                   sampleRate="48000"
-                   channels="1" />
-        </EncoderProfile>
-
         <ImageEncoding quality="95" />
         <ImageEncoding quality="85" />
         <ImageEncoding quality="75" />
