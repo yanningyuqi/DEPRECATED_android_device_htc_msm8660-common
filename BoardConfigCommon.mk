@@ -20,7 +20,6 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/msm8660-common/include
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_LINARO_TOOLCHAIN_DATE := 2014.01
 TARGET_KERNEL_SOURCE := kernel/htc/pyramid
 
 # Platform
