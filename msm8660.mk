@@ -134,7 +134,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     debug.hwc.dynThreshold=1.9 \
     lpa.decode=false \
-    debug.sf.no_hw_vsync=1 \
     ro.zygote.disable_gl_preload=true \
     debug.hwui.render_dirty_regions=false \
     debug.egl.recordable.rgba8888=1
