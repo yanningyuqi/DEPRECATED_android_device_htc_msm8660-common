@@ -205,20 +205,7 @@
                        channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="cif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="1200000"
-                   width="352"
-                   height="288"
-                   frameRate="31" />
-
-            <Audio codec="aac"
-                   bitRate="96000"
-                   sampleRate="48000"
-                   channels="1" />
-        </EncoderProfile>
-
-        <EncoderProfile quality="480p" fileFormat="mp4" duration="15">
+        <EncoderProfile quality="vga" fileFormat="mp4" duration="15">
                 <Video codec="h264"
                        bitRate="2000000"
                        width="640"
@@ -257,20 +244,7 @@
                        channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="timelapsecif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="1200000"
-                   width="352"
-                   height="288"
-                   frameRate="31" />
-
-            <Audio codec="aac"
-                   bitRate="96000"
-                   sampleRate="48000"
-                   channels="1" />
-        </EncoderProfile>
-
-        <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="15">
+        <EncoderProfile quality="timelapsevga" fileFormat="mp4" duration="15">
                 <Video codec="h264"
                        bitRate="2000000"
                        width="640"
